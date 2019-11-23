@@ -1,9 +1,9 @@
 version: '2'
 services:
   # MySql 5.7
-  mysql5.7:
+  mysql:
     image: mysql:5.7
-    container_name: mysql-5.7
+    container_name: mysql
     volumes:
       - "./data/mysql_5.7:/var/lib/mysql"
     restart: always
@@ -15,17 +15,18 @@ services:
   # PhpMyAdmin
   phpmyadmin:
     depends_on:
-      - mysql5.7
+      - mysql
     image: phpmyadmin/phpmyadmin
     container_name: PhpMyAdmin
     volumes:
       - "./config/phpmyadmin/themes/fallen/:/var/www/html/themes/fallen/"
       - "./config/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php"
     links:
-      - mysql5.7:mysql
+      - mysql:mysql
+    restart: always
     ports:
      - 8080:80
     environment:
       MYSQL_USERNAME: root
       MYSQL_ROOT_PASSWORD: root
-      PMA_HOST: mysql5.7
+      PMA_HOST: mysql
