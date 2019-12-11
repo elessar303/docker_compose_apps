@@ -1,1 +1,2 @@
 data/*
+config/phpmyadmin/user/config.secret.inc.php
