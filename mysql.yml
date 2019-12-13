@@ -6,12 +6,16 @@ services:
     container_name: mysql
     volumes:
       - "./data/mysql_5.7:/var/lib/mysql"
+      - "./config/mysql:/etc/mysql/conf.d"
+      - "./logs/mysql:/var/log/mysql"
     restart: always
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: root
+    entrypoint: ""
+    command: bash -c "chown -R mysql:mysql /var/log/mysql && exec /entrypoint.sh mysqld"
   # PhpMyAdmin
   phpmyadmin:
     depends_on:
