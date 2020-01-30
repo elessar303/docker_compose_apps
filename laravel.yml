@@ -1,7 +1,7 @@
 version: '3'
 services:
   #NGINX
-  web:
+  nginx:
     container_name: Nginx
     build:
       context: ./
@@ -11,9 +11,9 @@ services:
     ports:
       - 8095:80
     links:
-      - app
+      - php-fpm
   #PHP-FPM
-  app:
+  php-fpm:
     container_name: Php-Fpm
     build:
       context: ./
