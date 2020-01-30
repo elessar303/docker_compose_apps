@@ -1,0 +1,24 @@
+version: '3'
+services:
+  #NGINX
+  web:
+    container_name: Nginx
+    build:
+      context: ./
+      dockerfile: ./config/laravel/nginx/Dockerfile
+    volumes:
+      - ../sistema_peaje:/var/www
+    ports:
+      - 8095:80
+    links:
+      - app
+  #PHP-FPM
+  app:
+    container_name: Php-Fpm
+    build:
+      context: ./
+      dockerfile: ./config/laravel/php-fpm/Dockerfile
+    volumes:
+      - ../sistema_peaje:/var/www
+    ports:
+      - 9000:9000
