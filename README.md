@@ -10,3 +10,13 @@ Mysql 5.7 y PhpMyAdmin en version latest con theme fallen ademas de montar el ar
 
 ### Comando:
 ` docker-compose -f mysql.yml up -d`
+
+## Laravel.yml
+Nginx latest y php-fpm 7.2, mapea una carpeta con un proyecto laravel
+
+### Servicios:
+- nginx
+- php-fpm
+
+### Comando
+` docker-compose -f laravel.yml up -d`
