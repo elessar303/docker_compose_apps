@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: ./config/laravel/nginx/Dockerfile
     volumes:
-      - ../laravel_project:/var/www
+      - ../sistema_peaje:/var/www
     ports:
       - 8095:80
     links:
@@ -19,6 +19,6 @@ services:
       context: ./
       dockerfile: ./config/laravel/php-fpm/Dockerfile
     volumes:
-      - ../laravel_project:/var/www
+      - ../sistema_peaje:/var/www
     ports:
       - 9000:9000
