@@ -67,6 +67,7 @@ RUN apk --no-cache add shadow \
     && usermod -u 1000 www-data
 
 RUN chown -R www-data:www-data /var/www
+RUN chown -R www-data:www-data /var/log
 RUN chmod 755 /var/www
 
 CMD ["php-fpm"]

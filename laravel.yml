@@ -8,10 +8,14 @@ services:
       dockerfile: ./config/laravel/nginx/Dockerfile
     volumes:
       - ../sistema_peaje:/var/www
+    restart: always
     ports:
       - 8095:80
     links:
       - php-fpm
+    networks:
+      development_net:
+          ipv4_address: 172.18.0.2
   #PHP-FPM
   php-fpm:
     container_name: Php-Fpm
@@ -20,5 +24,18 @@ services:
       dockerfile: ./config/laravel/php-fpm/Dockerfile
     volumes:
       - ../sistema_peaje:/var/www
+      - ./config/laravel/php-fpm/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
+      - "./logs/laravel/php-fpm:/var/log"
+    restart: always
     ports:
       - 9000:9000
+    networks:
+      development_net:
+          ipv4_address: 172.18.0.3
+
+networks:
+  development_net:
+      ipam:
+          driver: default
+          config:
+              - subnet: 172.18.0.0/16
