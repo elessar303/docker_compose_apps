@@ -2,48 +2,49 @@ version: '3.2'
 services:
   # MySql 5.7
   mysql:
-    image: mysql:5.7
+    build:
+      context: ./
+      dockerfile: ./config/mysql/Dockerfile
     container_name: MySql
     volumes:
-      - "./data/mysql_5.7:/var/lib/mysql"
-      - "./config/mysql:/etc/mysql/conf.d"
-      - "./logs/mysql:/var/log/mysql"
+      - ./data/mysql_5.7:/var/lib/mysql
+      - ./logs/mysql:/var/log/mysql
     restart: always
     ports:
-      - 3306:3306
+      - ${PORT_MYSQL}:3306
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
     networks:
       development_net:
-          ipv4_address: 172.18.0.4
+          ipv4_address: ${IP_MYSQL}
     entrypoint: ""
     command: bash -c "chown -R mysql:mysql /var/log/mysql && exec /entrypoint.sh mysqld"
   # PhpMyAdmin
   phpmyadmin:
     depends_on:
       - mysql
-    image: phpmyadmin/phpmyadmin:latest
+    image: phpmyadmin/phpmyadmin:4.9
     container_name: PhpMyAdmin
     volumes:
-      - "./config/phpmyadmin/themes/fallen/:/var/www/html/themes/fallen/"
-      - "./config/phpmyadmin/user/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php:rw"
+      - ./config/phpmyadmin/themes/fallen/:/var/www/html/themes/fallen/
+      - ./config/phpmyadmin/user/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php:rw
     links:
       - mysql:mysql
     restart: always
     ports:
-     - 8080:80
+     - ${PORT_PHPMYADMIN}:80
     environment:
-      MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USERNAME: ${MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       PMA_HOST: mysql
     networks:
       development_net:
-          ipv4_address: 172.18.0.5
+          ipv4_address: ${IP_PHPMYADMIN}
 
 networks:
   development_net:
       ipam:
           driver: default
           config:
-              - subnet: 172.18.0.0/16
+              - subnet: ${SUBNET}

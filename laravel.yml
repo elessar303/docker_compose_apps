@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 services:
   #NGINX
   nginx:
@@ -10,12 +10,12 @@ services:
       - ../sistema_peaje:/var/www
     restart: always
     ports:
-      - 8095:80
+      - ${PORT_NGINX}:80
     links:
       - php-fpm
     networks:
       development_net:
-          ipv4_address: 172.18.0.2
+          ipv4_address: ${IP_NGINX}
   #PHP-FPM
   php-fpm:
     container_name: Php-Fpm
@@ -25,17 +25,22 @@ services:
     volumes:
       - ../sistema_peaje:/var/www
       - ./config/laravel/php-fpm/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
-      - "./logs/laravel/php-fpm:/var/log"
+      - ./logs/laravel/php-fpm:/var/log
+    environment:
+      - DB_USERNAME=${MYSQL_ROOT_PASSWORD}
+      - DB_PASSWORD=${MYSQL_USER}
+      - DB_HOST=${IP_MYSQL}
+      - DB_DATABASE=${DB_DATABASE}
     restart: always
     ports:
-      - 9000:9000
+      - ${PORT_PHPFPM}:9000
     networks:
       development_net:
-          ipv4_address: 172.18.0.3
+          ipv4_address: ${IP_PHPFPM}
 
 networks:
   development_net:
       ipam:
           driver: default
           config:
-              - subnet: 172.18.0.0/16
+              - subnet: ${SUBNET}
