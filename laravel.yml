@@ -8,6 +8,7 @@ services:
       dockerfile: ./config/laravel/nginx/Dockerfile
     volumes:
       - ${PROJECT_DIR}:/var/www
+      - ./logs/nginx:/var/log/nginx
     restart: always
     ports:
       - ${PORT_NGINX}:80
