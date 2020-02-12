@@ -22,4 +22,4 @@ Nginx latest y php-fpm 7.2, mapea una carpeta con un proyecto laravel
 ` docker-compose -f laravel.yml up -d`
 
 ## .Env
-Configuraciones de usuario y password de la base de datos, red e ips de containers y puertos
+Configuraciones de usuario y password de la base de datos, ips de containers y puertos
