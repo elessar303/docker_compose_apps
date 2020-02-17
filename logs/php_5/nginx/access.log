@@ -2,3 +2,5 @@
 172.18.0.1 - - [17/Feb/2020:14:50:27 +0000] "GET /favicon.ico HTTP/1.1" 200 90633 "http://127.0.0.1:8082/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36"
 172.18.0.1 - - [17/Feb/2020:14:50:52 +0000] "GET / HTTP/1.1" 200 90759 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36"
 172.18.0.1 - - [17/Feb/2020:14:50:53 +0000] "GET /favicon.ico HTTP/1.1" 200 90625 "http://127.0.0.1:8082/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36"
+172.18.0.1 - - [17/Feb/2020:15:11:12 +0000] "GET / HTTP/1.1" 200 90743 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36"
+172.18.0.1 - - [17/Feb/2020:15:11:12 +0000] "GET /favicon.ico HTTP/1.1" 200 90601 "http://127.0.0.1:8082/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36"
