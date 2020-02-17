@@ -9,7 +9,9 @@ Mysql 5.7 y PhpMyAdmin en version latest con theme fallen ademas de montar el ar
 - phpmyadmin
 
 ### Comando:
-` docker-compose -f mysql.yml up -d`
+```bash
+docker-compose -f mysql.yml up -d
+```
 
 ## laravel.yml
 Nginx latest y php-fpm 7.4 mapea una carpeta con un proyecto laravel
@@ -19,7 +21,9 @@ Nginx latest y php-fpm 7.4 mapea una carpeta con un proyecto laravel
 - php-fpm
 
 ### Comando
-` docker-compose -f laravel.yml up -d`
+```bash
+docker-compose -f laravel.yml up -d`
+```
 
 ## php_5.yml
 Nginx alpine latest y php-fpm 5.6, mapea una carpeta con un proyecto php
@@ -29,12 +33,16 @@ Nginx alpine latest y php-fpm 5.6, mapea una carpeta con un proyecto php
 - php-fpm
 
 ### Comando
-`docker-compose -f php_5.yml up -d`
+```bash
+docker-compose -f php_5.yml up -d
+```
 
 ## .Env
 Configuraciones de usuario y password de la base de datos, ips de containers y puertos. Copiar .env.example a .env
 
-###Comandos Adicionales
+### Comandos Adicionales
 
 Mostrar containers con Ips:
-`docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' (docker ps -aq)`
+```bash
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' (docker ps -aq)
+```
