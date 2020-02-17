@@ -7,8 +7,8 @@ services:
       context: ./
       dockerfile: ./config/laravel/nginx/Dockerfile
     volumes:
-      - ${PROJECT_DIR}:/var/www
-      - ./logs/nginx:/var/log/nginx
+      - ${LARAVEL_PROJECT_DIR}:/var/www
+      - ./logs/laravel/nginx:/var/log/nginx
     restart: always
     ports:
       - ${PORT_NGINX}:80
@@ -24,7 +24,7 @@ services:
       context: ./
       dockerfile: ./config/laravel/php-fpm/Dockerfile
     volumes:
-      - ${PROJECT_DIR}:/var/www
+      - ${LARAVEL_PROJECT_DIR}:/var/www
       - ./config/laravel/php-fpm/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
       - ./logs/laravel/php-fpm:/var/log
     environment:
