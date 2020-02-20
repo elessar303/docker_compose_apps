@@ -32,7 +32,7 @@ RUN set -xe \
         imagemagick-dev \
         libtool \
         make \
-    && docker-php-ext-install zip mysqli tokenizer opcache pdo pdo_mysql pdo_pgsql mbstring zip mysqli xml bcmath iconv pcntl \
+    && docker-php-ext-install zip mysqli tokenizer opcache pdo pdo_mysql pdo_pgsql mbstring xml bcmath iconv pcntl \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-enable intl \

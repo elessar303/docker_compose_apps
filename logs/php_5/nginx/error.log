@@ -1,0 +1,6 @@
+2020/02/17 22:19:24 [error] 6#6: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: webphp, request: "GET /pyme/selectraerp/index.php HTTP/1.1", upstream: "fastcgi://172.18.0.6:9000", host: "127.0.0.1:8082"
+2020/02/17 22:19:49 [error] 6#6: *1 directory index of "/var/www/" is forbidden, client: 172.18.0.1, server: webphp, request: "GET / HTTP/1.1", host: "127.0.0.1:8082"
+2020/02/17 22:20:07 [error] 6#6: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: webphp, request: "GET /pyme/ HTTP/1.1", upstream: "fastcgi://172.18.0.6:9000", host: "127.0.0.1:8082"
+2020/02/17 22:22:35 [error] 6#6: *1 directory index of "/var/www/" is forbidden, client: 172.18.0.1, server: webphp, request: "GET / HTTP/1.1", host: "127.0.0.1:8082"
+2020/02/17 22:22:37 [error] 6#6: *1 directory index of "/var/www/" is forbidden, client: 172.18.0.1, server: webphp, request: "GET / HTTP/1.1", host: "127.0.0.1:8082"
+2020/02/17 22:32:25 [error] 6#6: *18 directory index of "/var/www/" is forbidden, client: 172.18.0.1, server: webphp, request: "GET / HTTP/1.1", host: "127.0.0.1:8082"
