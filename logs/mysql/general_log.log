@@ -4318,3 +4318,141 @@ Time                 Id Command    Argument
 mysqld, Version: 5.7.29-log (MySQL Community Server (GPL)). started with:
 Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
 Time                 Id Command    Argument
+mysqld, Version: 5.7.29-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2020-02-21T00:02:08.884471Z	    2 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:09.016926Z	    2 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:09.065386Z	    2 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:09.066070Z	    2 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:09.098068Z	    3 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:09.115600Z	    3 Quit	
+2020-02-21T00:02:09.115675Z	    2 Quit	
+2020-02-21T00:02:09.131467Z	    4 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:09.131882Z	    4 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:09.132253Z	    4 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:09.132461Z	    4 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:09.133832Z	    5 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:09.138992Z	    4 Query	SELECT CURRENT_USER()
+2020-02-21T00:02:09.147812Z	    4 Query	SHOW GRANTS
+2020-02-21T00:02:09.149064Z	    4 Query	SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+2020-02-21T00:02:09.191941Z	    5 Query	SHOW TABLES FROM `phpmyadmin`
+2020-02-21T00:02:09.192831Z	    5 Init DB	phpmyadmin
+2020-02-21T00:02:09.193095Z	    5 Query	SHOW TABLES FROM `phpmyadmin`
+2020-02-21T00:02:09.193753Z	    5 Query	SELECT NULL FROM pma__relation LIMIT 0
+2020-02-21T00:02:09.222448Z	    5 Query	SELECT NULL FROM pma__table_info LIMIT 0
+2020-02-21T00:02:09.235678Z	    5 Query	SELECT NULL FROM pma__table_coords LIMIT 0
+2020-02-21T00:02:09.236590Z	    5 Query	SELECT NULL FROM pma__pdf_pages LIMIT 0
+2020-02-21T00:02:09.245605Z	    5 Query	SELECT NULL FROM pma__column_info LIMIT 0
+2020-02-21T00:02:09.246657Z	    5 Query	SHOW COLUMNS FROM `phpmyadmin`.`pma__column_info` WHERE Field IN ('input_transformation', 'input_transformation_options')
+2020-02-21T00:02:09.248143Z	    5 Query	SELECT NULL FROM pma__history LIMIT 0
+2020-02-21T00:02:09.249441Z	    5 Query	SELECT NULL FROM pma__recent LIMIT 0
+2020-02-21T00:02:09.264660Z	    5 Query	SELECT NULL FROM pma__favorite LIMIT 0
+2020-02-21T00:02:09.266478Z	    5 Query	SELECT NULL FROM pma__table_uiprefs LIMIT 0
+2020-02-21T00:02:09.268464Z	    5 Query	SELECT NULL FROM pma__tracking LIMIT 0
+2020-02-21T00:02:09.270010Z	    5 Query	SELECT NULL FROM pma__userconfig LIMIT 0
+2020-02-21T00:02:09.271460Z	    5 Query	SELECT NULL FROM pma__bookmark LIMIT 0
+2020-02-21T00:02:09.272827Z	    5 Query	SELECT NULL FROM pma__users LIMIT 0
+2020-02-21T00:02:09.273577Z	    5 Query	SELECT NULL FROM pma__usergroups LIMIT 0
+2020-02-21T00:02:09.274152Z	    5 Query	SELECT NULL FROM pma__navigationhiding LIMIT 0
+2020-02-21T00:02:09.274751Z	    5 Query	SELECT NULL FROM pma__savedsearches LIMIT 0
+2020-02-21T00:02:09.293886Z	    5 Query	SELECT NULL FROM pma__central_columns LIMIT 0
+2020-02-21T00:02:09.294741Z	    5 Query	SELECT NULL FROM pma__designer_settings LIMIT 0
+2020-02-21T00:02:09.295636Z	    5 Query	SELECT NULL FROM pma__export_templates LIMIT 0
+2020-02-21T00:02:09.299926Z	    5 Query	SELECT `tables` FROM `phpmyadmin`.`pma__favorite` WHERE `username` = 'root'
+2020-02-21T00:02:09.311927Z	    5 Query	SELECT `tables` FROM `phpmyadmin`.`pma__favorite` WHERE `username` = 'root'
+2020-02-21T00:02:09.312419Z	    5 Query	SELECT `tables` FROM `phpmyadmin`.`pma__recent` WHERE `username` = 'root'
+2020-02-21T00:02:09.312925Z	    5 Query	SELECT `tables` FROM `phpmyadmin`.`pma__recent` WHERE `username` = 'root'
+2020-02-21T00:02:09.323461Z	    5 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:09.345036Z	    5 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:09.353913Z	    4 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:09.354745Z	    4 Query	SELECT 1 FROM (SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`COLUMN_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`TABLE_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES`) t WHERE `IS_GRANTABLE` = 'YES' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1
+2020-02-21T00:02:09.372417Z	    4 Query	SELECT 1 FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE `PRIVILEGE_TYPE` = 'CREATE USER' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1
+2020-02-21T00:02:09.373801Z	    4 Query	SELECT 1 FROM mysql.user LIMIT 1
+2020-02-21T00:02:09.374758Z	    4 Init DB	mysql
+2020-02-21T00:02:09.375025Z	    4 Query	SELECT USER()
+2020-02-21T00:02:09.389436Z	    4 Query	SELECT `CHARACTER_SET_NAME` AS `Charset`, `DESCRIPTION` AS `Description` FROM `information_schema`.`CHARACTER_SETS`
+2020-02-21T00:02:09.390547Z	    4 Query	SELECT `CHARACTER_SET_NAME` AS `Charset`, `COLLATION_NAME` AS `Collation`, `IS_DEFAULT` AS `Default` FROM `information_schema`.`COLLATIONS`
+2020-02-21T00:02:09.394337Z	    4 Query	SHOW SESSION VARIABLES LIKE 'character_set_server'
+2020-02-21T00:02:09.442736Z	    4 Query	SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC
+2020-02-21T00:02:09.447545Z	    5 Query	SELECT `db_name`, COUNT(*) AS `count` FROM `phpmyadmin`.`pma__navigationhiding` WHERE `username`='root' GROUP BY `db_name`
+2020-02-21T00:02:09.452181Z	    4 Query	SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t
+2020-02-21T00:02:09.454115Z	    4 Query	SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t
+2020-02-21T00:02:09.496668Z	    4 Query	SHOW MASTER LOGS
+2020-02-21T00:02:09.497132Z	    5 Query	SELECT `tab` FROM `phpmyadmin`.`pma__usergroups` WHERE `allowed` = 'N' AND `tab` LIKE 'server%' AND `usergroup` = (SELECT usergroup FROM `phpmyadmin`.`pma__users` WHERE `username` = 'root')
+2020-02-21T00:02:09.500597Z	    5 Query	SELECT * FROM `phpmyadmin`.`pma__bookmark` WHERE ( `user` = '' OR `user` = 'root' ) ORDER BY label ASC
+2020-02-21T00:02:09.524992Z	    5 Quit	
+2020-02-21T00:02:09.525023Z	    4 Quit	
+2020-02-21T00:02:09.984138Z	    6 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:09.984446Z	    6 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:09.984811Z	    6 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:09.985025Z	    6 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:09.986231Z	    7 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:09.987591Z	    7 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:09.988691Z	    6 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:09.993707Z	    7 Quit	
+2020-02-21T00:02:09.993802Z	    6 Quit	
+2020-02-21T00:02:10.045810Z	    8 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.046031Z	    8 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:10.046291Z	    8 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:10.046434Z	    8 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:10.047397Z	    9 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.048370Z	    9 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.049212Z	    8 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:10.049731Z	    8 Query	SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC
+2020-02-21T00:02:10.053471Z	    9 Query	SELECT `db_name`, COUNT(*) AS `count` FROM `phpmyadmin`.`pma__navigationhiding` WHERE `username`='root' GROUP BY `db_name`
+2020-02-21T00:02:10.055287Z	    8 Query	SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t
+2020-02-21T00:02:10.057107Z	    8 Query	SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t
+2020-02-21T00:02:10.062885Z	    9 Quit	
+2020-02-21T00:02:10.062966Z	    8 Quit	
+2020-02-21T00:02:10.073277Z	   10 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.073577Z	   10 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:10.073859Z	   10 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:10.073995Z	   10 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:10.075596Z	   11 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.077287Z	   11 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.079100Z	   10 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:10.084699Z	   11 Quit	
+2020-02-21T00:02:10.084752Z	   10 Quit	
+2020-02-21T00:02:10.175993Z	   12 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.176209Z	   12 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:10.176460Z	   12 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:10.176597Z	   12 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:10.177495Z	   13 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.178425Z	   13 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.179343Z	   12 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:10.179639Z	   13 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.181263Z	   13 Query	SELECT `username` FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.182428Z	   13 Query	UPDATE `phpmyadmin`.`pma__userconfig` SET `timevalue` = NOW(), `config_data` = '{\"Console\\/Mode\":\"collapse\",\"FontSize\":\"80%\",\"Server\\/hide_db\":\"\",\"ThemeDefault\":\"fallen\",\"lang\":\"es\"}' WHERE `username` = 'root'
+2020-02-21T00:02:10.306632Z	   13 Quit	
+2020-02-21T00:02:10.306912Z	   12 Quit	
+2020-02-21T00:02:10.317310Z	   14 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.317617Z	   14 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:10.317969Z	   14 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:10.318164Z	   14 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:10.319676Z	   15 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.320942Z	   15 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.322241Z	   15 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.323214Z	   14 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:10.939266Z	   15 Quit	
+2020-02-21T00:02:10.939341Z	   14 Quit	
+2020-02-21T00:02:10.955171Z	   16 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.955503Z	   16 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:10.955921Z	   16 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:10.956190Z	   16 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:10.957518Z	   17 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:10.959226Z	   17 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:10.960614Z	   16 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:10.962242Z	   17 Quit	
+2020-02-21T00:02:10.962368Z	   16 Quit	
+2020-02-21T00:02:13.396394Z	   18 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:13.396745Z	   18 Query	SELECT @@version, @@version_comment
+2020-02-21T00:02:13.397344Z	   18 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-02-21T00:02:13.397650Z	   18 Query	SET lc_messages = 'es_ES'
+2020-02-21T00:02:13.399627Z	   19 Connect	root@172.18.0.5 on  using TCP/IP
+2020-02-21T00:02:13.401292Z	   19 Query	SELECT `config_data`, UNIX_TIMESTAMP(`timevalue`) ts FROM `phpmyadmin`.`pma__userconfig` WHERE `username` = 'root'
+2020-02-21T00:02:13.402796Z	   18 Query	SET collation_connection = 'utf8mb4_unicode_ci'
+2020-02-21T00:02:13.422171Z	   18 Init DB	mysql
+2020-02-21T00:02:13.457610Z	   18 Query	SHOW SESSION VARIABLES LIKE 'FOREIGN_KEY_CHECKS'
+2020-02-21T00:02:13.464646Z	   19 Quit	
+2020-02-21T00:02:13.464731Z	   18 Quit	

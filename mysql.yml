@@ -29,6 +29,7 @@ services:
     volumes:
       - ./config/phpmyadmin/themes/fallen/:/var/www/html/themes/fallen/
       - ./config/phpmyadmin/user/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php:rw
+      - ./config/phpmyadmin/php.ini:/usr/local/etc/php/php.ini
     links:
       - mysql:mysql
     restart: always
