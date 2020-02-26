@@ -1,4 +1,4 @@
 data/*
 config/phpmyadmin/user/config.secret.inc.php
 .env
-*.log
+logs/**/*.log
