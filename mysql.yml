@@ -19,7 +19,7 @@ services:
       development_net:
           ipv4_address: ${IP_MYSQL}
     entrypoint: ""
-    command: bash -c "chown -R mysql:mysql /var/log/mysql && exec /entrypoint.sh mysqld"
+    command: bash -c "chown -R mysql:mysql /var/log/mysql && chmod -R 777 /var/log/mysql && exec /entrypoint.sh mysqld"
   # PhpMyAdmin
   phpmyadmin:
     depends_on:

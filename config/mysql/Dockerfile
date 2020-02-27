@@ -15,6 +15,8 @@ RUN chmod 644 /etc/mysql/conf.d/my.cnf
 
 RUN chown -R mysql.mysql /var/log/mysql
 
-RUN chmod -R 777 /var/log/mysql
+RUN chmod 777 /var/log/mysql/general_log.log
+
+RUN chmod 777 /var/log/mysql/error.log
 
 EXPOSE 3306
