@@ -11,7 +11,7 @@ services:
       - ./logs/laravel/nginx:/var/log/nginx
     restart: always
     ports:
-      - ${PORT_NGINX}:80
+      - ${PORT_LARAVEL_APP}:80
     links:
       - php-fpm
     networks:

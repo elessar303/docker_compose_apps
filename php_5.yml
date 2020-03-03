@@ -30,8 +30,8 @@ services:
       - php5-fpm
     restart: always
     ports:
-      - "8082:80"
-      - "443:443"
+      - ${PORT_PHP5_APP}:80
+      - 443:443
     networks:
       development_net:
           ipv4_address: ${IP_PHP5FPM}
