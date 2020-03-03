@@ -1,4 +1,4 @@
-# Docker Compose Apps
+# Docker Compose Apps :whale2:
 Dockers para ambientes de Desarrollo / Dockers for development environment
 
 ## mysql.yml
