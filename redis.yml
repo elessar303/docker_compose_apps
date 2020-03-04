@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  # Redis
+  redis:
+    image: redis:5.0.7-alpine3.11
+    container_name: Redis
+    volumes:
+      - ./data/redis:/data
+    restart: always
+    ports:
+      - ${PORT_REDIS}:6379
+    networks:
+      development_net:
+          ipv4_address: ${IP_REDIS}
+
+networks:
+  development_net:
+      ipam:
+          driver: default
+          config:
+              - subnet: ${SUBNET}
