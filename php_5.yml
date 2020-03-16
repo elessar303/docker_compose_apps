@@ -16,7 +16,7 @@ services:
           ipv4_address: ${IP_PHP5_NGINX}
   #Nginx
   nginx-php5:
-    container_name: Nginx-Php5
+    container_name: Php5-App
     build:
         context: ./
         dockerfile: ./config/php_5/nginx/Dockerfile

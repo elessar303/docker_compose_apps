@@ -2,7 +2,7 @@ version: '3.2'
 services:
   #NGINX
   nginx:
-    container_name: Nginx
+    container_name: Laravel-App
     build:
       context: ./
       dockerfile: ./config/laravel/nginx/Dockerfile
@@ -31,7 +31,7 @@ services:
       - DB_USERNAME=${MYSQL_ROOT_PASSWORD}
       - DB_PASSWORD=${MYSQL_USER}
       - DB_HOST=${IP_MYSQL}
-      - DB_DATABASE=${DB_DATABASE}
+      - DB_DATABASE=${DB_DATABASE_LARAVEL}
     restart: always
     ports:
       - ${PORT_PHPFPM}:9000
