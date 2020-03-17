@@ -19,7 +19,7 @@ RUN apk update \
     nano
 
 #Paquetes de PHP
-RUN docker-php-ext-install pdo_mysql mysqli zip pdo mbstring xml bcmath
+RUN docker-php-ext-install mysql pdo_mysql mysqli zip pdo mbstring xml bcmath
 
 RUN apk add --no-cache libpng-dev \
     && docker-php-ext-install gd
