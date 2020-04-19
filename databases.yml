@@ -21,6 +21,25 @@ services:
           ipv4_address: ${IP_MYSQL}
     entrypoint: ""
     command: bash -c "chown -R mysql:mysql /var/log/mysql && chmod -R 777 /var/log/mysql && exec /entrypoint.sh mysqld"
+  # Maria DB
+  mariadb:
+    build:
+      context: ./
+      dockerfile: ./config/mariadb/Dockerfile
+    container_name: MariaDB
+    volumes:
+      - ./data/mariadb:/var/lib/mysql
+      - ./logs/mariadb:/var/log/mysql
+    restart: always
+    ports:
+      - ${PORT_MARIADB}:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      development_net:
+          ipv4_address: ${IP_MARIADB}
   # PhpMyAdmin
   phpmyadmin:
     depends_on:
@@ -39,7 +58,7 @@ services:
     environment:
       MYSQL_USERNAME: ${MYSQL_USER}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      PMA_HOST: mysql
+      PMA_HOSTS: mysql,mariadb
     networks:
       development_net:
           ipv4_address: ${IP_PHPMYADMIN}
