@@ -1,8 +1,8 @@
 # Docker Compose Apps :whale2:
 Dockers para ambientes de Desarrollo / Dockers for development environment
 
-## mysql.yml
-Mysql 5.7 y PhpMyAdmin en version latest con theme fallen ademas de montar el archivo *config.user.inc.php*, usuario y password de BD seteados en *root / root*, persintencia de data de la base de datos. Archivo my.cnf para configuraciones se copia al crear la imagen.
+## databases.yml
+MariaDB 10.4, Mysql 5.7 y PhpMyAdmin en version latest con theme fallen ademas de montar el archivo *config.user.inc.php*, usuario y password de BD seteados en *root / root*, persintencia de data de la base de datos. Archivo my.cnf para configuraciones se copia al crear la imagen.
 
 ### Servicios:
 - mysql
