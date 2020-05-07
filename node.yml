@@ -1,0 +1,32 @@
+version: '3.2'
+services:
+  #Node
+  node:
+    container_name: Node
+    build:
+        context: ./
+        dockerfile: ./config/node/Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ${NODE_PROJECT_DIR}/:/opt/app
+      - /opt/app/node_modules/
+    ports:
+      - ${PORT_NODE}:${PORT_NODE}
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      NODE_PROJECT_DIR: ${NODE_PROJECT_DIR}
+      MONGO_USERNAME: ${MONGO_USERNAME}
+      MONGO_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_HOSTNAME: ${IP_MONGO}
+      MONGO_PORT: ${PORT_MONGO}
+      PORT_NODE: ${PORT_NODE}
+    networks:
+      development_net:
+          ipv4_address: ${IP_NODE}
+
+networks:
+  development_net:
+      ipam:
+          driver: default
+          config:
+              - subnet: ${SUBNET}

@@ -1,0 +1,41 @@
+version: '3.2'
+services:
+  #Mongo Express
+  mongo-express:
+    container_name: Mongo-Express
+    image: mongo-express
+    ports:
+      - ${PORT_MONGO_EXPRESS}:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_ROOT_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: MongoDB
+      ME_CONFIG_OPTIONS_EDITORTHEME: cobalt
+    links:
+      - mongo
+    networks:
+        development_net:
+            ipv4_address: ${IP_MONGO_EXPRESS}
+  #Mongo Database
+  mongo:
+    container_name: MongoDB
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    ports:
+      - ${PORT_MONGO}:27017
+    volumes:
+    - ./data/mongo:/data/db
+    networks:
+        development_net:
+            ipv4_address: ${IP_MONGO}
+
+networks:
+    development_net:
+        ipam:
+            driver: default
+            config:
+                - subnet: ${SUBNET}
