@@ -16,6 +16,7 @@ WORKDIR /opt/app/
 COPY ./config/node/package.json .
 RUN npm init -y
 RUN npm install --quiet
+RUN npm update
 
 COPY ${NODE_PROJECT_DIR} .
 # Instalación de Nodemon en forma Global

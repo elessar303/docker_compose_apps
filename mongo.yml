@@ -6,6 +6,7 @@ services:
     image: mongo-express
     ports:
       - ${PORT_MONGO_EXPRESS}:8081
+    restart: unless-stopped
     environment:
       ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
       ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
@@ -27,6 +28,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
     ports:
       - ${PORT_MONGO}:27017
+    restart: unless-stopped
     volumes:
     - ./data/mongo:/data/db
     networks:

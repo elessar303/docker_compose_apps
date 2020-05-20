@@ -8,7 +8,7 @@ services:
         dockerfile: ./config/node/Dockerfile
     restart: unless-stopped
     volumes:
-      - ${NODE_PROJECT_DIR}/:/opt/app
+      - ${NODE_PROJECT_DIR}/.:/opt/app
       - /opt/app/node_modules/
     ports:
       - ${PORT_NODE}:${PORT_NODE}
