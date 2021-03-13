@@ -2,7 +2,7 @@
 Dockers para ambientes de Desarrollo / Dockers for development environment
 
 ## mysql.yml
-MariaDB 10.4, Mysql 5.7 y PhpMyAdmin en version latest con theme fallen ademas de montar el archivo *config.user.inc.php*, usuario y password de BD seteados en *root / root*, persintencia de data de la base de datos. Archivo my.cnf para configuraciones se copia al crear la imagen.
+MariaDB 10.5, Mysql 5.7 y PhpMyAdmin en version latest con theme darkwolf ademas de montar el archivo *config.user.inc.php*, usuario y password de BD seteados en *root / root*, persintencia de data de la base de datos. Archivos my.cnf y php-phpmyadmin.ini para configuraciones se copia al crear la imagen.
 
 ### Servicios:
 - mariadb
