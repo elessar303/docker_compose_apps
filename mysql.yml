@@ -44,12 +44,12 @@ services:
   phpmyadmin:
     depends_on:
       - mysql
-    image: phpmyadmin/phpmyadmin:4.9
+    image: phpmyadmin/phpmyadmin:5.1
     container_name: PhpMyAdmin
     volumes:
-      - ./config/phpmyadmin/themes/fallen/:/var/www/html/themes/fallen/
+      - ./config/phpmyadmin/themes/darkwolf/:/var/www/html/themes/darkwolf/
       - ./config/phpmyadmin/user/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php:rw
-      - ./config/phpmyadmin/php.ini:/usr/local/etc/php/php.ini
+      - ./config/phpmyadmin/php.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini:rw
     links:
       - mysql:mysql
     restart: always
@@ -59,6 +59,7 @@ services:
       MYSQL_USERNAME: ${MYSQL_USER}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       PMA_HOSTS: mysql,mariadb
+      UPLOAD_LIMIT: 1280M
     networks:
       development_net:
           ipv4_address: ${IP_PHPMYADMIN}
