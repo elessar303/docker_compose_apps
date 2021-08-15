@@ -19,15 +19,15 @@ RUN apk update \
     nano
 
 #Paquetes de PHP
-RUN docker-php-ext-install mysql pdo_mysql mysqli zip pdo mbstring xml bcmath
+RUN docker-php-ext-install mysql pdo_mysql mysqli zip pdo mbstring xml bcmath pgsql pdo_pgsql
 
 RUN apk add --no-cache libpng-dev \
     && docker-php-ext-install gd
 
 # Genera 'locale' para es_AR
 RUN cp /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime && \
-	echo "America/Argentina/Buenos_Aires" > /etc/timezone && \
-	apk del tzdata
+    echo "America/Argentina/Buenos_Aires" > /etc/timezone && \
+    apk del tzdata
 
 RUN chown -R www-data:www-data /var/www
 RUN chown -R www-data:www-data /var/log

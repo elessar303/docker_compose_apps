@@ -6,11 +6,15 @@ services:
     build:
       context: ./
       dockerfile: ./config/php_5/php-fpm/Dockerfile
+      args:
+        TEXT_ENV: ${NODE_ENV}
     volumes:
       - ${PHP_PROJECT_DIR}:/var/www
       - ./config/php_5/php-fpm/php5.ini:/usr/local/etc/php/conf.d/php5.ini
       - ./logs/php_5/php-fpm:/var/log
     restart: always
+    environment:
+      NODE_ENV: production
     networks:
       development_net:
           ipv4_address: ${IP_PHP5_NGINX}
@@ -32,6 +36,8 @@ services:
     ports:
       - ${PORT_PHP5_APP}:80
       - 443:443
+    environment:
+      NODE_ENV: ${PHP_PROJECT_DIR}
     networks:
       development_net:
           ipv4_address: ${IP_PHP5FPM}
