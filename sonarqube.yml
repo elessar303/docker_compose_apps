@@ -2,7 +2,7 @@ version: '3.3'
 services:
   #SonarQube
   sonarqube:
-    image: sonarqube:9-community
+    image: sonarqube:lts-community
     container_name: SonarQube
     restart: always
     depends_on:
@@ -37,14 +37,8 @@ services:
   sonar-scanner:
     image: sonarsource/sonar-scanner-cli:latest
     container_name: SonnarScannerCli
-    restart: on-failure
     depends_on:
       - sonarqube
-    environment:
-      SONAR_HOST_URL: http://sonarqube:9000
-      SONAR_LOGIN: ${PROYECT_KEY_SONAR}
-    volumes:
-      - ${SCANNER_SONAR_DIR}:/usr/src
     networks:
       - sonarnet
     links:
