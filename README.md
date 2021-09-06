@@ -79,7 +79,7 @@ docker-compose -f php_5.yml up -d
 
 ## sonarqube.yml
 
-SonarQube LTS Community, Sonar Scanner Cli Latest y BD PostgreSQL 12 para persistencia de datos de consfiguracion, logs y data con persistencia en las carpetas correspondientes de logs/sonarqube y data/sonarqube, al momento de levantar la imagen de sonarqube posiblemente se tenga que ampliar la memoria del servicio de elastic dentro del contenedor, en windows teniendo la consola WSL y Docker Desktop correr el siguiente comando
+SonarQube LTS Community, Sonar Scanner Cli Latest y BD PostgreSQL 12 para persistencia de datos de configuracion, logs y data con persistencia en las carpetas correspondientes de logs/sonarqube y data/sonarqube, al momento de levantar la imagen de sonarqube posiblemente se tenga que ampliar la memoria del servicio de elastic dentro del contenedor, en windows teniendo la consola WSL y Docker Desktop correr el siguiente comando
 
 ```bash
 wsl -d docker-desktop
