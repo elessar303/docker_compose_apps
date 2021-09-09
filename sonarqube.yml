@@ -45,7 +45,5 @@ services:
       - sonarqube
 networks:
   sonarnet:
-      ipam:
-          driver: default
-          config:
-              - subnet: ${SUBNET}
+      external:
+        name: sonarnet

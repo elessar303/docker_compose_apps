@@ -74,6 +74,7 @@ Nginx alpine latest y php-fpm 5.6, mapea una carpeta con un proyecto php
 ### Comando
 
 ```bash
+docker network create sonarnet --subnet 172.24.24.0/24
 docker-compose -f php_5.yml up -d
 ```
 
@@ -129,14 +130,22 @@ Luego el siguiente comando para ejecutar el analisis una vez se ha configurado u
 docker run --rm  --network=host -v path/to/folder:/usr/src sonarsource/sonar-scanner-cli -X
 ```
 
+**Nota:** En caso de no poder acceder via Web por tener un VPN Ver [Misc](#Misc Dockers) 
+
 ## .Env
 
 Configuraciones de usuario y password de la base de datos, ips de containers y puertos. Rutas de proyectos para montar. Copiar .env.example a .env
 
-### Comandos Adicionales
+## Comandos Adicionales
 
 Mostrar containers con Ips:
 
 ```bash
 docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' (docker ps -aq)
 ```
+
+## Misc
+
+### Dockers
+
+Hay casos que al momento de levantar los dockers estando dentro de una VPN no se pueden acceder, esto es por tema del Network virtual que crear docker para los contenedores, este error solamente se me ha presentado para el SonarQube, se soluciona creando primero una red antes de iniciar la VPN, Ver: [Error Docker VPN](https://stackoverflow.com/questions/45692255/how-make-openvpn-work-with-docker/50948930#50948930 "Implementar en el docker-compose").
