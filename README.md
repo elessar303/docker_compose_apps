@@ -130,7 +130,7 @@ Luego el siguiente comando para ejecutar el analisis una vez se ha configurado u
 docker run --rm  --network=host -v path/to/folder:/usr/src sonarsource/sonar-scanner-cli -X
 ```
 
-**Nota:** En caso de no poder acceder via Web por tener un VPN Ver [Misc](#Misc Dockers) 
+**Nota:** En caso de no poder acceder via Web por tener un VPN Ver [Misc Dockers](#dockers)
 
 ## .Env
 
