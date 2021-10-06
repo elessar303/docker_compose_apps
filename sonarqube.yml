@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
   #SonarQube
   sonarqube:
@@ -25,6 +25,7 @@ services:
   sonardb:
     image: postgres:12
     container_name: SonarQubeDataBase
+    restart: always
     environment:
       POSTGRES_USER: sonar
       POSTGRES_PASSWORD: sonar
@@ -45,5 +46,5 @@ services:
       - sonarqube
 networks:
   sonarnet:
-      external:
-        name: sonarnet
+    external:
+      name: sonarnet
