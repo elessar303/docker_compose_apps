@@ -9,13 +9,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^4.17.1",  
-    "mongoose":"^5.9.14",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.14",
     "body-parser": "^1.19.0",
-    "method-override":"^3.0.0",
-    "errorhandler":"^1.5.1",
-    "winston":"^3.2.1",
-    "axios":"^0.19.2"
+    "method-override": "^3.0.0",
+    "errorhandler": "^1.5.1",
+    "winston": "^3.2.1",
+    "axios": "^0.25.0"
   },
   "author": "Junior Ayala",
   "license": "ISC"
