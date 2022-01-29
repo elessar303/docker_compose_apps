@@ -1,4 +1,4 @@
-version: '3.2'
+version: "3.2"
 services:
   # MySql 5.7
   mysql:
@@ -17,7 +17,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     networks:
       development_net:
-          ipv4_address: ${IP_MYSQL}
+        ipv4_address: ${IP_MYSQL}
     entrypoint: ""
     command: bash -c "chown -R mysql:mysql /var/log/mysql && chmod -R 777 /var/log/mysql && exec /entrypoint.sh mysqld"
   # Maria DB
@@ -37,7 +37,7 @@ services:
       MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     networks:
       development_net:
-          ipv4_address: ${IP_MARIADB}
+        ipv4_address: ${IP_MARIADB}
   # PhpMyAdmin
   phpmyadmin:
     depends_on:
@@ -52,7 +52,7 @@ services:
       - mysql:mysql
     restart: always
     ports:
-     - ${PORT_PHPMYADMIN}:80
+      - ${PORT_PHPMYADMIN}:80
     environment:
       MYSQL_USERNAME: ${MYSQL_USER}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -60,11 +60,11 @@ services:
       UPLOAD_LIMIT: 1280M
     networks:
       development_net:
-          ipv4_address: ${IP_PHPMYADMIN}
+        ipv4_address: ${IP_PHPMYADMIN}
 
 networks:
   development_net:
-      ipam:
-          driver: default
-          config:
-              - subnet: ${SUBNET}
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

@@ -1,4 +1,4 @@
-version: '3.2'
+version: "3.7"
 services:
   #NGINX
   nginx:
@@ -16,7 +16,7 @@ services:
       - php-fpm
     networks:
       development_net:
-          ipv4_address: ${IP_NGINX}
+        ipv4_address: ${IP_NGINX}
   #PHP-FPM
   php-fpm:
     container_name: Php-Fpm
@@ -26,6 +26,7 @@ services:
     volumes:
       - ${LARAVEL_PROJECT_DIR}:/var/www
       - ./config/laravel/php-fpm/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
+      - ./config/laravel/php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
       - ./logs/laravel/php-fpm:/var/log
     environment:
       - DB_USERNAME=${MYSQL_ROOT_PASSWORD}
@@ -37,11 +38,11 @@ services:
       - ${PORT_PHPFPM}:9000
     networks:
       development_net:
-          ipv4_address: ${IP_PHPFPM}
+        ipv4_address: ${IP_PHPFPM}
 
 networks:
   development_net:
-      ipam:
-          driver: default
-          config:
-              - subnet: ${SUBNET}
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

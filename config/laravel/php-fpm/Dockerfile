@@ -26,12 +26,12 @@ RUN set -xe \
     && apk add --update icu \
     && apk add --no-cache --virtual .php-deps make \
     && apk add --no-cache --virtual .build-deps \
-        zlib-dev \
-        icu-dev \
-        g++ \
-        imagemagick-dev \
-        libtool \
-        make \
+    zlib-dev \
+    icu-dev \
+    g++ \
+    imagemagick-dev \
+    libtool \
+    make \
     && docker-php-ext-install zip mysqli tokenizer opcache pdo pdo_mysql pdo_pgsql mbstring xml bcmath iconv pcntl \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
@@ -55,10 +55,14 @@ RUN apk add --no-cache libmcrypt-dev \
     && yes | pecl install -o -f mcrypt-1.0.1 \
     && docker-php-ext-enable mcrypt
 
+RUN apk add --no-cache $PHPIZE_DEPS \
+    && pecl install xdebug-3.1.2 \
+    && docker-php-ext-enable xdebug
+
 # Genera 'locale' para es_AR
 RUN cp /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime && \
-	echo "America/Argentina/Buenos_Aires" > /etc/timezone && \
-	apk del tzdata
+    echo "America/Argentina/Buenos_Aires" > /etc/timezone && \
+    apk del tzdata
 
 USER root
 
