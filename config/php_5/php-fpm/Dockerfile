@@ -15,6 +15,8 @@ RUN apk update \
     postgresql-dev \
     libmemcached-dev \
     libxml2-dev \
+    freetype-dev \
+    libjpeg-turbo-dev \
     git \
     nano
 
@@ -22,6 +24,7 @@ RUN apk update \
 RUN docker-php-ext-install mysql pdo_mysql mysqli zip pdo mbstring xml bcmath pgsql pdo_pgsql
 
 RUN apk add --no-cache libpng-dev \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd
 
 # Genera 'locale' para es_AR
