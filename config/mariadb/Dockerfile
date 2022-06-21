@@ -1,4 +1,4 @@
-FROM mariadb:10.7
+FROM mariadb:10.8
 # instalamos paquetes
 RUN apt-get update && apt-get install nano
 

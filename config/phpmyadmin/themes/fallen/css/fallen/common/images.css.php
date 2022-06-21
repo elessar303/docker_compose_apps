@@ -1,3 +1,0 @@
-img.lightbulb {
-  cursor: pointer
-}

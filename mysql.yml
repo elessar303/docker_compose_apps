@@ -42,10 +42,9 @@ services:
   phpmyadmin:
     depends_on:
       - mysql
-    image: phpmyadmin/phpmyadmin:5.1
+    image: phpmyadmin/phpmyadmin:5.2
     container_name: PhpMyAdmin
     volumes:
-      - ./config/phpmyadmin/themes/darkwolf/:/var/www/html/themes/darkwolf/
       - ./config/phpmyadmin/user/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php:rw
       - ./config/phpmyadmin/php.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini:rw
     links:
